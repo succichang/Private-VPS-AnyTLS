@@ -1,0 +1,10 @@
+#!name=私人 VPS 流量
+#!desc=通过 AnyTLS 节点读取 VPS 本地统计，显示收发流量、套餐余量、重置时间和运行时长。
+#!arguments=POLICY:Private-VPS-AnyTLS
+#!requirement=CORE_VERSION>=20
+
+[Panel]
+Private VPS Traffic = title="私人 VPS",content="点击刷新以查询流量",style=info,script-name=private-vps-traffic,update-interval=600
+
+[Script]
+private-vps-traffic = type=generic,script-path=https://raw.githubusercontent.com/succichang/Private-VPS-Traffic/main/Private-VPS-Traffic.js,argument="POLICY={{{POLICY}}}",timeout=10
